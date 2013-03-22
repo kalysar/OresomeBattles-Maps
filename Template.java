@@ -24,7 +24,7 @@ public class Template implements Listener {
     
     OresomeBattlesMaps plugin;
     OresomeBattles Battles;
-    public Template(OresomeBattlesMaps pl) {
+    public Deep Caverns(OresomeBattlesMaps pl) {
 	plugin = pl;
 	plugin.getServer().getPluginManager().registerEvents(this, plugin);
 	Battles = (OresomeBattles) Bukkit.getServer().getPluginManager().getPlugin("OresomeBattles");
@@ -36,9 +36,9 @@ public class Template implements Listener {
     public ArrayList<Location> FFASpawns = new ArrayList<Location>();
 
     // Map details
-    String name = "template";
-    String fullName = "Template";
-    String creators = "Zachoz, pegabeavercorn and derp";
+    String name = "deep caverns";
+    String fullName = "Deep Caverns";
+    String creators = "Kalysar, Alphaminecraft91, MR_SKINNA7";
     //Map download link: N/A
     
     @EventHandler(priority = EventPriority.NORMAL)
@@ -54,16 +54,34 @@ public class Template implements Listener {
     public void readyTDMSpawns() {
 	World w = Bukkit.getServer().getWorld(name);
 
-	Location redSpawn = new Location(w, -72, 71, -1208, -1, 0);
-	Location blueSpawn = new Location(w, -116, 66, -1140, -178, 0);
+	Location redSpawn = new Location(w, 0, 99, 27, 2, 0);
+	Location blueSpawn = new Location(w, -9, 110, -20, 0, 0);
 
 	redSpawns.add(redSpawn);
-	redSpawns.add(new Location(w, -143, 66, -1211, -50, 0));
-	redSpawns.add(new Location(w, -141, 66, -1142, -152, 0));
+	redSpawns.add(new Location(w, 0, 99, 27, 2, 0));
+	redSpawns.add(new Location(w, -9, 110, -20, 0, 0));
+	redSpawns.add(new Location(w, 21, 105, -13, 0, 0));
+	redSpawns.add(new Location(w, 4, 106, -41, 0, 0));
+	redSpawns.add(new Location(w, -18, 101, 13, 0, 0));
+	redSpawns.add(new Location(w, 2, 104, 15, 0, 0));
+	redSpawns.add(new Location(w, -2, 109, -4, 0, 0));
+	redSpawns.add(new Location(w, 28, 105, 10, 0, 0));
+	redSpawns.add(new Location(w, 27, 96, 0, 0, 0));
+	redSpawns.add(new Location(w, 30, 105, -14, 0, 0));
+	redSpawns.add(new Location(w, -9, 106, 18, 0, 0));
 	
 	blueSpawns.add(blueSpawn);
-	blueSpawns.add(new Location(w, -142, 66, -1171, -108, 0));
-	blueSpawns.add(new Location(w, -127, 70, -1158, -162, 0));
+	blueSpawns.add(new Location(w, -9, 110, -20, 0, 0));
+	blueSpawns.add(new Location(w, 0, 99, 27, 0, 0));
+	blueSpawns.add(new Location(w, -16, 108, -3, 0, 0));
+	blueSpawns.add(new Location(w, -30, 108, -3, 0, 0));
+	blueSpawns.add(new Location(w, -18, 101, 13, 0, 0));
+	blueSpawns.add(new Location(w, -27, 88, 17, 0, 0));
+	blueSpawns.add(new Location(w, -32, 76, 16, 0, 0));
+	blueSpawns.add(new Location(w, -46, 97, 7, 0, 0));
+	blueSpawns.add(new Location(w, -86, 93, 13, 0, 0));
+	blueSpawns.add(new Location(w, 26, 105, -13, 0, 0));
+	blueSpawns.add(new Location(w, 21, 94, 2, 0, 0));
 
 	Battles.setRedSpawns(name, redSpawns);
 	Battles.setBlueSpawns(name, blueSpawns);
@@ -120,6 +138,7 @@ public class Template implements Listener {
 	    ItemStack IRON_PANTS = new ItemStack(Material.IRON_LEGGINGS, 1);
 	    ItemStack IRON_BOOTS = new ItemStack(Material.IRON_BOOTS, 1);
 	    ItemStack IRON_SWORD = new ItemStack(Material.IRON_SWORD, 1);
+	    ItemStack EXP = new ItemStack(Material.EXP_BOTTLE, 5);
 	    
 	    p.getInventory().setBoots(IRON_BOOTS);
 	    p.getInventory().setLeggings(IRON_PANTS);
@@ -131,6 +150,7 @@ public class Template implements Listener {
 	    i.setItem(2, STEAK);
 	    i.setItem(3, HEALTH_POTION);
 	    i.setItem(4, ARROWS);
+	    i.setItem(5, EXP);
 
 	   }
     }
@@ -143,14 +163,14 @@ public class Template implements Listener {
     
     // Region. (Top corner block and bottom corner block.
     // Top left corner.
-    public int x1 = -207;
-    public int y1 = 52;
-    public int z1 = -1220;
+    public int x1 = -100;
+    public int y1 = 160;
+    public int z1 = -70;
     
     //Bottom right corner.
-    public int x2 = -38;
-    public int y2 = 112;
-    public int z2 = -1125;
+    public int x2 = -70;
+    public int y2 = 30;
+    public int z2 = 50;
 
     // Getting the region
     public static boolean contains(Location loc, int x1, int x2, int y1,
@@ -178,10 +198,10 @@ public class Template implements Listener {
      * have code that says what blocks can and can't be broken.
      * 
      * Usually you should just leave this to Zachoz and pegabeavercorn to do and
-     * leave them you suggestions via a comment. ("// Text here")
+     * leave them you suggestions via a comment. ("// zach and pega can u perhaps add a plugin or two. one that affects a ghast tear and one that affects maybe a fishing rod that drags or whatever. Rename it however u like and add in the import stuff that i have absolutely no idea about. Sorry first time coding Alpha was being a douche and made me do it all. Thanks. Text here")
      * 
      * If you have experience in Java and the Bukkit API feel free to write your own!
-     */
+     */  
 
     // Code for disabling block breaking:
 
